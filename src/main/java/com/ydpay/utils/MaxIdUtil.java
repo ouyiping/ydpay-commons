@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import com.ydpay.cache.redis.RedisCache;
 
@@ -74,5 +75,13 @@ public class MaxIdUtil {
 			YdpayLogger.error("获取key失败", e);
 			return "0";
 		}
+	}
+	
+	/**
+	 * 获取uuid主键
+	 * @return
+	 */
+	public static String getUUIDPrimaryKey(){
+		return UUID.randomUUID().toString().replace("-", "");
 	}
 }
